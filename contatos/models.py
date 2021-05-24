@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django import forms
 
 
 class Categoria(models.Model):
@@ -21,3 +22,9 @@ class Contato(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class FormContato(forms.ModelForm):
+    class Meta:
+        model = Contato
+        exclude = ()
