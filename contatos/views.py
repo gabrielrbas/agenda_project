@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Contato
 
 
@@ -10,7 +10,7 @@ def index(request):
 
 
 def detalhes(request, id_contato):
-    contato = Contato.objects.get(id=id_contato)
+    contato = get_object_or_404(Contato, id=id_contato)
     return render(request, 'contatos/detalhes.html', {
         'contato': contato
     })
