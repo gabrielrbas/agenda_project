@@ -7,3 +7,10 @@ def index(request):
     return render(request, 'contatos/index.html', {
         'contatos': contatos
     })
+
+
+def detalhes(request, id_contato):
+    contato = Contato.objects.get(id=id_contato)
+    return render(request, 'contatos/detalhes.html', {
+        'contato': contato
+    })
