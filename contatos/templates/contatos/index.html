@@ -6,6 +6,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
       <th>Sobrenome</th>
       <th>Telefone</th>
@@ -16,6 +17,9 @@
     {%for contato in contatos%}
     <tr>
       <td>
+        <a href="{%url 'detalhes' contato.id%}">{{contato.id}}</a>
+      </td>
+      <td>  
         <a href="{%url 'detalhes' contato.id%}">{{contato.nome}}</a>
       </td>
       <td>{{contato.sobrenome}}</td>
